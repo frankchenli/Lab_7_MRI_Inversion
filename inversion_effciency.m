@@ -5,8 +5,11 @@ filenames = dir(fullfile('./data', '*.IMA'));
 
 for i = 1:numel(filenames)
     data(i,1).ima = dicomread(filenames(i).name);
-end
+    data(i,1).info = dicominfo(filenames(i).name);
 
+
+end
+%%
 
 for i = 1:16:size(data,1)
     figure;
