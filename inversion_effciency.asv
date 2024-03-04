@@ -1,11 +1,22 @@
 clear all;
 close all;
-addpath ./BENG278_W24_LAB02\BENG278_W24_LAB02
-filenames = dir('./BENG278_W24_LAB02/*.IMA');
-
-a
+addpath ./data/
+filenames = dir(fullfile('./data', '*.IMA'));
+filenames2 = dir(fullfile('./data', '*.AS'));
 
 
 for i = 1:numel(filenames)
-    the_data(i) = dicomread(filenames(i).name);
+    data(i).ima = dicomread(filenames(i).name);
+    data(i).sr = 
 end
+
+
+for i = 1:16:size(data,2)
+    figure;
+    for j = 1:16
+        subplot(4,4,j);
+        imshow(data(j+i-1).matrix, []);
+    end
+end
+
+
