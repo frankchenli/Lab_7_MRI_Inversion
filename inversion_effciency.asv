@@ -1,0 +1,11 @@
+clear all;
+close all;
+addpath ./BENG278_W24_LAB02\BENG278_W24_LAB02
+filenames = dir('./BENG278_W24_LAB02/*.IMA');
+
+a
+
+
+for i = 1:numel(filenames)
+    the_data(i) = dicomread(filenames(i).name);
+end
