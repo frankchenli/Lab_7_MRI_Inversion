@@ -27,13 +27,26 @@ end
 oilphan = data(oil); perfusion = data(perf); birnphan = data(BIRN);
 
 
-for i = 1:16:size(birnphan,2)
-    figure;
-    for j = 1:16
-        subplot(4,4,j);
-        imshow(birnphan(j+i-1).ima, []);
-    end
+
+a = 1;
+for i = 8:3:47
+    oil_sech(a).img = oilphan(i).ima;
+    oil_sech(a).info = oilphan(i).info;
+    a = a+1;
 end
+
+
+
+
+for i = 1:2:13
+    figure;
+    subplot(1,2,1);
+    imshow(oil_sech(i).img,[]);
+    subplot(1,2,2);
+    imshow(oil_sech(i+1).img,[]);
+end
+
+
 
 
 
