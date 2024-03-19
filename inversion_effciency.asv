@@ -159,14 +159,12 @@ for i = 5:14
     oil_sech(i).correct_diff = oil_sech(i).reference-oil_sech(i).corrected;
 end
 
-% figure;
-% for i = 1:14
-%     subplot(2,7,i)
-%     stem(oil_sech(i).correct_diff(:,64));
-%     title(titles(i));
-%     ylim([0 600]);
-% end
-% sgtitle('Oil phantom Adiabatic Corrected Difference(Reference - Inverted)')
+
+for i = 1:14
+    figure;
+    stem(oil_sech(i)correct_diff(i).img(:,64));
+end
+
 
 
 stem(oil_sech(5).img(:,64));
