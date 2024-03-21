@@ -273,9 +273,9 @@ refer = [];
 m = [];
 for j = 1:14
     for i = 1:128
-        a = birn_sech(j).correct_diff(:,i);
-        summ = mean(birn_sech(j).correct_diff(:,i));
-        ref = mean(birn_sech(j).reference(:,i));
+        a = oil_sech(j).correct_diff(:,i);
+        summ = mean(oil_sech(j).correct_diff(:,i));
+        ref = mean(oil_sech(j).reference(:,i));
         average = [summ average];
         refer = [refer ref];
     end
@@ -283,17 +283,6 @@ for j = 1:14
     total = total/mean(refer);
     m = [m total];
 end
-
-
-
-
-figure;
-B1 = [0 0.05 0.1 0.15 0.25 0.35 0.45 0.55 0.65 0.75 0.85 0.95 1.05 1.15];
-plot(B1,m);
-xlabel('B1')
-ylabel('Average Inversion Intensity');
-title('BIRN-Phantom Adiabatic Inversion Normalized Intensity');
-ylim([0 1.1]);
 
 
 
